@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Aesthetic</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            background: linear-gradient(135deg, #d9a7c7, #fffcdc);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .login-container {
+            width: 100%;
+            max-width: 360px;
+            background: rgba(255, 255, 255, 0.23);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            animation: fadeIn 0.8s ease;
+        }
+
+        .login-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: 500;
+            color: #333;
+        }
+
+        .input-group {
+            margin-bottom: 18px;
+            position: relative;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 12px 14px;
+            border: none;
+            outline: none;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.6);
+            font-size: 14px;
+        }
+
+        .btn-login {
+            width: 100%;
+            padding: 12px;
+            background: #ff7bbd;
+            border: none;
+            color: white;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 5px;
+            transition: 0.3s;
+        }
+
+        .btn-login:hover {
+            background: #ff91ca;
+        }
+
+        .link {
+            text-align: center;
+            margin-top: 14px;
+            font-size: 14px;
+            color: #444;
+        }
+
+        .link a {
+            color: #ff7bbd;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-container">
+        <h2>Selamat Datang👋</h2>
+
+        <form>
+            <div class="input-group">
+                <input type="text" placeholder="Username" required />
+            </div>
+
+            <div class="input-group">
+                <input type="password" placeholder="Password" required />
+            </div>
+
+            <button class="btn-login" type="submit">Masuk</button>
+
+            <div class="link">
+                Tidak punya akun? <a href="#">Daftar</a>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>

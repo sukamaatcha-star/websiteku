@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Musik</title>
+
+<style>
+    body {
+        background-color: #ffe6f2;
+        font-family: Poppins, sans-serif;
+        text-align: center;
+        padding-top: 120px;
+    }
+    .card {
+        background: white;
+        width: 70%;
+        margin: auto;
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .logout-btn {
+        margin-top: 25px;
+        background: #ff85c2;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 10px;
+        color: white;
+        cursor: pointer;
+    }
+</style>
+
+</head>
+<body>
+
+
+    
+    <!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Musik</title>
+
+<style>
+    body {
+        background-color: #ffe6f2;
+        font-family: Poppins, sans-serif;
+        text-align: center;
+        padding-top: 70px;
+    }
+
+    h1 {
+        color: #ff4fa3;
+        margin-bottom: 20px;
+    }
+
+    .card {
+        background: white;
+        width: 80%;
+        margin: auto;
+        padding: 30px;
+        border-radius: 20px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .song-list {
+        text-align: left;
+        width: 80%;
+        margin: auto;
+        margin-top: 20px;
+    }
+
+    .song-item {
+        background: #ffd1e8;
+        padding: 12px;
+        margin: 8px 0;
+        border-radius: 12px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .song-item:hover {
+        background: #ffb3d4;
+    }
+
+    .controls {
+        margin-top: 25px;
+    }
+
+    .btn {
+        background: #ff85c2;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 10px;
+        color: white;
+        cursor: pointer;
+        margin: 5px;
+        transition: 0.3s;
+    }
+
+    .btn:hover {
+        background: #ff5ba8;
+    }
+
+    .logout-btn {
+        margin-top: 25px;
+        background: #ff85c2;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 10px;
+        color: white;
+        cursor: pointer;
+    }
+</style>
+
+</head>
+<body>
+
+<h1>🎵 Playlist Musik Saya 🎵</h1>
+
+<div class="card">
+    <h2 id="nowPlaying">Tidak ada lagu yang dimainkan</h2>
+
+    <audio id="audioPlayer" controls style="width: 100%; margin-top: 20px;">
+        Your browser does not support audio.
+    </audio>
+
+    <div class="controls">
+        <button class="btn" onclick="playSong()">Play</button>
+        <button class="btn" onclick="pauseSong()">Pause</button>
+    </div>
+</div>
+
+<h2 style="margin-top: 40px;">Daftar Lagu</h2>
+
+<div class="song-list" id="songList"></div>
+
+<button class="logout-btn" onclick="window.location=' dasbord.html'">Logout</button>
+
+<script>
+    const audioPlayer = document.getElementById("audioPlayer");
+    const nowPlaying = document.getElementById("nowPlaying");
+
+    // DAFTAR LAGU — Tambah lagu sesuka kamu
+    const songs = [
+        { title: "Lagu 1 -  Can't Help Falling in Love", url: " Elvis Presley - Can't Help Falling in Love (Lyrics).mp3" },
+        { title: "Lagu 2 - Heaven", url: "Bryan Adams - Heaven.mp3" },
+        { title: "Lagu 3 - Rumah Kita", url: "Rumah Kita (with Tohpati & Czech Symphony Orchestra).mp3" },
+        { title: "Lagu 4 - Menjaga Hati", url: "(OFFICIAL AUDIO) Yovie & Nuno - Menjaga Hati.mp3" }
+    ];
+
+    // Generate list lagu
+    const songListDiv = document.getElementById("songList");
+
+    songs.forEach((song, index) => {
+        let div = document.createElement("div");
+        div.className = "song-item";
+        div.innerText = song.title;
+        div.onclick = () => loadSong(index);
+        songListDiv.appendChild(div);
+    });
+
+    // Load dan mainkan lagu
+    function loadSong(index) {
+        audioPlayer.src = songs[index].url;
+        nowPlaying.innerText = "Sedang dimainkan: " + songs[index].title;
+        audioPlayer.play();
+    }
+
+    // Tombol play
+    function playSong() {
+        audioPlayer.play();
+    }
+
+    // Tombol pause
+    function pauseSong() {
+        audioPlayer.pause();
+    }
+</script>
+
+</body>
+</html>
+
+</body>
+</html>
